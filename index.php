@@ -5,14 +5,14 @@
 
 $nameOne = "John Styles";
 
-$todayOfWeekNumber = date("l");
-$todayOfWeekName = date("N");
+$todayOfWeekName = date("l");
+$todayOfWeekNubmer = date("N");
 
 $johnWorkSchedule="";
 $janeWorkSchedule="";
 
 if ($nameOne == "John Styles") {
-    if (in_array($todayOfWeekName, [1,3,5]) ) {
+    if (in_array($todayOfWeekNubmer, [1,3,5]) ) {
         $johnWorkSchedule="8:00-12:00 ";
     } else {
         $johnWorkSchedule="Нерабочий день ";
@@ -21,7 +21,7 @@ if ($nameOne == "John Styles") {
 
 $nameTwo = "Jane Doe";
 if ($nameTwo == "Jane Doe") {
-    if (in_array($todayOfWeekName, [2,4,6])) {
+    if (in_array($todayOfWeekNubmer, [2,4,6])) {
         $janeWorkSchedule = "12:00-16:00 ";
     } else {
         $janeWorkSchedule = "Нерабочий день";
@@ -29,10 +29,12 @@ if ($nameTwo == "Jane Doe") {
 }
 ?>
 
+<h1><?= 'Today is ' ,$todayOfWeekName;?></h1>
+
 <table border='3' >
-<tr><th>Имя</th><th>День недели</th><th>График работы</th></tr>
-<tr><td><?php echo $nameOne; ?></td><td><?php echo $todayOfWeekNumber; ?></td><td><?php echo $johnWorkSchedule; ?></td></tr>
-<tr><td><?php echo $nameTwo; ?></td><td><?php echo $todayOfWeekNumber; ?></td><td><?php echo $janeWorkSchedule; ?></td></tr>
+<tr><th>Id</th><th>Имя</th><th>График работы</th></tr>
+<tr><td><?php echo "1"; ?></td><td><?php echo $nameOne; ?></td><td><?php echo $johnWorkSchedule; ?></td></tr>
+<tr><td><?php echo "2"; ?></td><td><?php echo $nameTwo; ?></td><td><?php echo $janeWorkSchedule; ?></td></tr>
 </table>
 
 
